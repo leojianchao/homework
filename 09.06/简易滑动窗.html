@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易滑动窗</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 100px;
+            background: #ccc;
+            float: left;
+            border-radius: 10%;
+            position: relative;
+            margin-top:100px;
+            margin-left: 10px;
+            overflow: hidden;
+        }
+        div span{
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            bottom:0;
+            box-shadow: inset 0 0 10px #000;
+            border-radius: 10%;
+            text-align: center;
+            background:#ccc;
+            line-height: 100px;
+            display:block;
+            transition:1s all ease;
+        }
+        div:hover span{
+            bottom:100px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="img/0.jpg" height="100" width="200"/>
+    <span>aaa</span>
+</div>
+<div>
+    <img src="img/1.jpg" height="100" width="200"/>
+    <span>bbb</span>
+</div>
+<div>
+    <img src="img/2.jpg" height="100" width="200"/>
+    <span>ccc</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高级动画</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        @keyframes abc {
+           from{width: 200px;}
+            to{width: 400px;}
+        }
+        /*.box{*/
+            /*width: 200px;*/
+            /*height: 100px;*/
+            /*background: red;*/
+            /*animation-name: abc;*/
+            /*animation-duration:1s;*/
+            /*animation-timing-function: linear;*/
+            /*animation-iteration-count:infinite ;*/
+            /*animation-direction: alternate;*/
+        /*}*/
+        .box{
+            width: 200px;
+            height: 100px;
+            background: red;
+        }
+        .box:hover{animation:abc 1s linear infinite alternate 1s;}
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

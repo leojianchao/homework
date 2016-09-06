@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>光照投影</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+            background: #ff0;
+            box-shadow: 0 0 100px lawngreen;
+        }
+        .article{
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            margin:200px auto;
+            font-size: 40px;
+            font-weight:bold;
+            text-shadow: 0 0 0 #000;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.querySelector('.box');
+            var oArt = document.querySelector('.article');
+            document.onmousemove = function (ev) {
+                oBox.style.left = ev.pageX - oBox.offsetWidth/2 + 'px';
+                oBox.style.top = ev.pageY - oBox.offsetHeight/2 + 'px';
+                var x = oArt.offsetLeft + oArt.offsetWidth/2 - ev.pageX;
+                var y = oArt.offsetTop + oArt.offsetHeight/2 - ev.pageY;
+                var dis = Math.sqrt(x*x + y*y);
+                oArt.style.textShadow = x/3 + 'px '+ y/3 + 'px '+ dis/10 + 'px red';
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box"></div>
+<p class="article">哈哈哈哈</p>
+</body>
+</html>
