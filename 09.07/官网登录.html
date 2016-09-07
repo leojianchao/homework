@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>官网登录</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .form_box{
+            width: 300px;
+            height: 200px;
+            border:1px solid #000;
+            border-radius: 10px;
+            margin:100px auto;
+            overflow: hidden;
+            display:none;
+            opacity:0;
+            -webkit-transform: scale(5,5);
+        }
+        .form_box input{
+            float: left;
+            margin-top:10px;
+            margin-left:50px;
+        }
+        .form_box a{
+            position: absolute;
+            left: 50%;
+            bottom:50%;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oForm = document.getElementById('form_box');
+            var oA = document.getElementById('a');
+            var oBtn = document.getElementById('btn');
+            oA.onclick = function(){
+                oForm.style.display = 'block';
+                oForm.style.WebkitTransition = '.2s all ease';
+                    setTimeout(function(){
+                    oForm.style.opacity = 1;
+                    oForm.style.WebkitTransform = 'scale(1,1)';
+                },0);
+            };
+            oBtn.onclick = function(){
+                oForm.style.opacity = 0;
+                oForm.style.WebkitTransform = 'scale(5,5)';
+//                oForm.style.WebkitTransition = '.3s all ease';
+                function TransEnd(){
+                    oForm.removeEventListener('transitionend',TransEnd,false);
+                    oForm.style.display = 'none';
+                }
+                oForm.addEventListener('transitionend',TransEnd,false);
+            };
+        };
+    </script>
+</head>
+<body>
+<a href="javascript:;" id="a">登录</a>
+<div class="form_box" id="form_box">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <a href="javascript:;" id="btn">X</a>
+</div>
+</body>
+</html>

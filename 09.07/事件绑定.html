@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: aqua;
+            position: absolute;
+            left: 0;
+            top: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oBtn = document.querySelector('input');
+            var oBox = document.querySelector('.box');
+            var bOk = true;
+            oBtn.onclick = function(){
+                oBox.style.WebkitTransition = '1s all ease';
+
+                if(bOk){
+                    oBox.style.opacity = 1;
+                }else{
+                    oBox.style.opacity = 0;
+                }
+                bOk = !bOk;
+                function TransEnd(){
+                    oBox.removeEventListener('transitionend',TransEnd,false);
+                    alert('哈哈');
+                }
+                oBox.addEventListener('transitionend',TransEnd,false);
+            };
+        };
+    </script>
+</head>
+<body>
+<input type="button" value="show/hide">
+<div class="box"></div>
+</body>
+</html>

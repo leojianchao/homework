@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒影</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #000;
+        }
+        div{
+            width: 400px;
+            height: 200px;
+            margin:100px auto;
+            position: relative;
+        }
+        span{
+            width: 400px;
+            height: 200px;
+            background: url("1.jpg") no-repeat;
+            background-size: 100%;
+            position: absolute;
+            left: 0;
+            top: 210px;
+            -webkit-transform:perspective(800px) rotateX(45deg) scale(1,-1);
+            -webkit-mask:-webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.3));
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="1.jpg" height="200" width="400"/>
+    <span></span>
+</div>
+</body>
+</html>

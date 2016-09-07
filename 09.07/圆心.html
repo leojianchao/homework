@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆心</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: aqua;
+            margin:100px auto;
+            /*-webkit-transform-origin:0 0; 左上角 */
+            /*-webkit-transform-origin:center 0;*/
+            /*-webkit-transform-origin:center 400px;*/
+            /*-webkit-transform-origin:bottom; 默认以底部中心旋转 */
+            -webkit-transition: 1s all ease;
+            -webkit-transform: rotate(0deg);
+        }
+        div:active{
+            -webkit-transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

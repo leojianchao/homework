@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform各种操作</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background:red;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 200px;
+            font-size:24px;
+            -webkit-transition: 1s all ease;
+            /*-webkit-transform: rotate(0deg);*/
+
+        }
+        div:active{
+            /*-webkit-transform: translate(-100px,-100px);  向左上平移*/
+            /*-webkit-transform: rotate(45deg);  旋转  */
+            /*-webkit-transform: scale(-1,-1); 放缩 */
+            -webkit-transform: skew(45deg); /*扭曲*/
+        }
+    </style>
+</head>
+<body>
+<div>
+    Hello World!
+</div>
+</body>
+</html>

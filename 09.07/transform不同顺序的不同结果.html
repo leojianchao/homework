@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform不同顺序的不同结果</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: lawngreen;
+            margin:100px auto;
+            -webkit-transition: 1s all ease;
+        }
+        div:active{
+            /*-webkit-transform: rotate(45deg) scale(2,1); 旋转后的矩形  */
+            -webkit-transform: scale(2,1) rotate(45deg); /*菱形*/
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
