@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件拖拽</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 400px;
+            height: 300px;
+            border:1px solid #000;
+            text-align: center;
+            font-size: 30px;
+            line-height: 30px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left:-200px;
+            margin-top:-150px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.querySelector('.box');
+            document.ondragenter = function(){
+                oBox.style.display = 'block';
+            };
+            document.ondragleave = function(){
+                oBox.style.display = 'none';
+            };
+            oBox.ondragenter = function(){
+                oBox.style.display = 'block';
+                oBox.innerHTML = 'Please release your mouse!'
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">Please push your document in this area!</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件拖拽</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 400px;
+            height: 300px;
+            border:1px solid #000;
+            text-align: center;
+            font-size: 30px;
+            line-height: 30px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left:-200px;
+            margin-top:-150px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.querySelector('.box');
+            oBox.ondragleave = function(){
+                oBox.innerHTML = 'Please push your document in this area!';
+            };
+            oBox.ondragenter = function(){
+                oBox.style.display = 'block';
+                oBox.style.color = 'red';
+                oBox.innerHTML = 'Please release your mouse!'
+            };
+
+            document.ondragover = function(){
+                oBox.style.display = 'block';
+                clearTimeout(oBox.timer);
+                oBox.timer = setTimeout(function(){
+                    oBox.style.display = 'none';
+                },300)
+            };
+
+            oBox.ondragover = function () {
+                return false;
+            };
+
+            oBox.ondrop = function(ev){
+               var oFile = ev.dataTransfer.files[0];
+                alert(
+                        'name --'+oFile.name+'\n'+
+                        'size --'+oFile.size+'\n'+
+                        'type --'+oFile.type
+                );
+                //显示文件的各个参数；
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="box">Please push your document in this area!</div>
+</body>
+</html>

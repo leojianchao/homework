@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D照片环</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        body{
+            background: #000;
+        }
+        ul{
+            width: 133px;
+            height: 200px;
+            position: relative;
+            margin:200px auto;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+            -webkit-transition: 1s all ease;
+        }
+        li{
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px #fff;
+            border-radius: 10px;
+            -webkit-transform:rotateY(0deg) translateZ(0) ;
+        }
+        ul:active{
+            -webkit-transform:perspective(800px) rotateY(360deg) rotateX(0deg);
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var aLi = document.querySelectorAll('li');
+            for(var i = 0; i < aLi.length; i++){
+                aLi[i].style.WebkitTransition = '1s all ease '+(11-i)*50+'ms';
+                aLi[i].style.WebkitTransform = ' rotateY('+(360/11)*i+'deg) translateZ(400px)';
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li><img src="img/0.jpg" height="200" width="133"/></li>
+    <li><img src="img/1.jpg" height="200" width="133"/></li>
+    <li><img src="img/2.jpg" height="200" width="133"/></li>
+    <li><img src="img/3.jpg" height="200" width="133"/></li>
+    <li><img src="img/4.jpg" height="200" width="133"/></li>
+    <li><img src="img/5.jpg" height="200" width="133"/></li>
+    <li><img src="img/6.jpg" height="200" width="133"/></li>
+    <li><img src="img/7.jpg" height="200" width="133"/></li>
+    <li><img src="img/8.jpg" height="200" width="133"/></li>
+    <li><img src="img/9.jpg" height="200" width="133"/></li>
+    <li><img src="img/11.jpg" height="200" width="133"/></li>
+</ul>
+</body>
+</html>
